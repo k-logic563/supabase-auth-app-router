@@ -2,6 +2,7 @@ import React from 'react'
 import { headers, cookies } from 'next/headers'
 import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { Database } from '@src/types/database'
+import Link from 'next/link'
 
 const fetchTodos = async () => {
   const supabase = createServerComponentSupabaseClient<Database>({
@@ -21,10 +22,13 @@ const fetchTodos = async () => {
 export const TodoList = async () => {
   const todos = await fetchTodos()
   return (
-    <ul>
+    <ul className="space-y-2">
       { todos.map(todo => (
         <li key={todo.id}>
-          {todo.title}
+          <Link href={`/todo/${todo.id}`}>
+            <span>{todo.created_at}</span>
+            <p>{todo.title}</p>            
+          </Link>
         </li>
       ))}
     </ul>

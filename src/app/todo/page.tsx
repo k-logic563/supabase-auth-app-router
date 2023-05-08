@@ -1,34 +1,16 @@
-import { createServerComponentSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import { headers, cookies } from "next/headers";
+import { Suspense } from "react"
 
-import type { Database } from "@src/types/database";
+import { TodoList } from "@src/components/todo/List"
+import { Spinner } from "@src/components/Spinner"
 
-const fetchTodos = async () => {
-  const supabase = createServerComponentSupabaseClient<Database>({
-    headers,
-    cookies,
-  })
-  const { data, error } = await supabase
-    .from('todos')
-    .select()
-    .order('created_at', { ascending: true })
-  if (error) {
-    throw new Error('Network response was not ok')
-  }
-  return data
-}
-
-const Todo = async () => {
-  const todos = await fetchTodos()
+export default async function Todo () {
   return (
-    <ul>
-      { todos.map(todo => (
-        <li key={todo.id}>
-          {todo.title}
-        </li>
-      ))}
-    </ul>
+    <section>
+      <h1 className="font-bold mb-4 text-xl">Todo List</h1>
+      <Suspense fallback={<Spinner />}>
+        {/* @ts-ignore */}
+        <TodoList />
+      </Suspense>
+    </section>
   )
 }
-
-export default Todo
