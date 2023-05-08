@@ -1,5 +1,10 @@
 import React from 'react'
 
+export const metadata = {
+  title: 'Todo List',
+  description: '',
+}
+
 type Props = {
   children: React.ReactNode
 }

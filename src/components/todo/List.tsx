@@ -4,7 +4,6 @@ import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-next
 import { Database } from '@src/types/database'
 
 const fetchTodos = async () => {
-  await await new Promise(resolve => setTimeout(resolve, 2000))
   const supabase = createServerComponentSupabaseClient<Database>({
     headers,
     cookies

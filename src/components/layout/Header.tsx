@@ -24,7 +24,7 @@ export const Header = () => {
 
   return (
     <header className="bg-teal-500 text-white px-6 py-4 flex justify-between items-center">
-      <h1>SB-Auth with AppRouter</h1>
+      <p>SB-Auth with AppRouter</p>
       { user.id && (
         <div className="flex items-center gap-x-8">
           <nav>

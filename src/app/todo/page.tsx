@@ -1,5 +1,3 @@
-import { Suspense } from 'react'
-
 import { TodoList } from '@src/components/todo/List'
 
 const Todo = () => {
