@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import type { Database } from '@src/types/database'
 
-const PROTECT_ROUTES = ['/']
+const PROTECT_ROUTES = ['/', '/todo']
 // const GUEST_ROUTES = ['/xxx']
 
 export async function middleware(req: NextRequest) {

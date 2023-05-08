@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "supabase:type": "supabase gen types typescript --linked > app/types/database.ts"
+    "supabase:type": "supabase gen types typescript --linked > src/types/database.ts"
   },
   "dependencies": {
     "@nanostores/react": "^0.5.0",
