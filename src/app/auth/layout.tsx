@@ -1,6 +1,5 @@
 export const metadata = {
   title: 'AuthPage',
-  description: '',
 }
 
 export default function AuthLayout({

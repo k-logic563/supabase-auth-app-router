@@ -1,7 +1,12 @@
 import { Suspense } from "react"
+import type { Metadata } from "next";
 
 import { TodoList } from "@src/components/todo/List"
 import { Spinner } from "@src/components/Spinner"
+
+export const metadata: Metadata = {
+  title: 'Todo List',
+};
 
 export default async function Todo () {
   return (
