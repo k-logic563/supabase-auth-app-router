@@ -5,7 +5,7 @@ import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
 
 import { updateLoginUser } from '@src/store'
-import { Context } from '@src/app/context/supabase-context'
+import { Context } from '@src/context/supabase-context'
 
 type Props = {
   children: React.ReactNode
@@ -23,6 +23,11 @@ export default function SupabaseProvider({ children }: Props) {
         updateLoginUser({
           id: session?.user?.id,
           email: session?.user?.email,
+        })
+      } else {
+        updateLoginUser({
+          id: undefined,
+          email: undefined,
         })
       }
       router.refresh()

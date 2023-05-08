@@ -1,15 +1,12 @@
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 
-import { TodoList } from '../components/TodoList'
-import { Spinner } from '@src/app/components/Spinner'
+import { TodoList } from '@src/components/todo/List'
 
 const Todo = () => {
   return (
     <>
-      <div>Todo Page</div>
-      <Suspense fallback={<Spinner />}>
-        <TodoList />
-      </Suspense>
+      {/*@ts-ignore*/}
+      <TodoList />
     </>
   )
 }

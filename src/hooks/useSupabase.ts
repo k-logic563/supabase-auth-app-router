@@ -2,7 +2,7 @@
 
 import { useContext } from 'react'
 
-import { Context } from '@src/app/context/supabase-context'
+import { Context } from '../context/supabase-context'
 
 export const useSupabase = () => {
   const context = useContext(Context)

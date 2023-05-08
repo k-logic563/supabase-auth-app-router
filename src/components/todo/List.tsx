@@ -9,7 +9,10 @@ const fetchTodos = async () => {
     headers,
     cookies
   })
-  const { data, error } = await supabase.from('todos').select()
+  const { data, error } = await supabase
+    .from('todos')
+    .select()
+    .order('created_at', { ascending: true })
   if (error) {
     throw new Error('Network response was not ok')
   }

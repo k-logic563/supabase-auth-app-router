@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useStore } from '@nanostores/react'
 
 import { loginUser } from '@src/store'
-import { useSupabase } from '@src/app/hooks/useSupabase'
+import { useSupabase } from '@src/hooks/useSupabase'
 
 export const Header = () => {
   const user = useStore(loginUser)

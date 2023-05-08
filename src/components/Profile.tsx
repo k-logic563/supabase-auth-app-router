@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useStore } from '@nanostores/react'
 
-import { useSupabase } from '@src/app/hooks/useSupabase'
+import { useSupabase } from '@src/hooks/useSupabase'
 import { loginUser } from '@src/store'
 
 export const Profile = () => {
