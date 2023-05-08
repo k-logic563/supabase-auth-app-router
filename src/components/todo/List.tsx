@@ -6,7 +6,7 @@ import { Database } from '@src/types/database'
 const fetchTodos = async () => {
   const supabase = createServerComponentSupabaseClient<Database>({
     headers,
-    cookies
+    cookies,
   })
   const { data, error } = await supabase
     .from('todos')
