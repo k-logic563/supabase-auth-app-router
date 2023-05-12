@@ -2,7 +2,7 @@ import { headers, cookies } from 'next/headers'
 import type { Metadata } from "next";
 import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs'
 
-import { Database } from '@src/types/database'
+import { Database } from '@app/types/database'
 
 type Props = {
   params: {

@@ -1,10 +1,11 @@
 import React from 'react'
 import { headers, cookies } from 'next/headers'
 import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs'
-import { Database } from '@src/types/database'
+import { Database } from '@app/types/database'
 import Link from 'next/link'
 
 const fetchTodos = async () => {
+  await await new Promise(resolve => setTimeout(resolve, 1000))
   const supabase = createServerComponentSupabaseClient<Database>({
     headers,
     cookies,
@@ -14,7 +15,7 @@ const fetchTodos = async () => {
     .select()
     .order('created_at', { ascending: true })
   if (error) {
-    throw new Error('Network response was not ok')
+    throw new Error(error.message)
   }
   return data
 }

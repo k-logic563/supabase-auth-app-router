@@ -1,17 +1,16 @@
 'use client'
 
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useStore } from '@nanostores/react'
 
 import { loginUser } from '@src/store'
-import { useSupabase } from '@src/hooks/useSupabase'
+import { supabase } from '@app/utils/supabase'
 
 export const Header = () => {
-  const user = useStore(loginUser)
   const router = useRouter()
-  const { supabase } = useSupabase()
+  const user = useStore(loginUser)
 
   const logout = async () => {
     const { error } = await supabase.auth.signOut()

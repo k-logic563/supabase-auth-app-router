@@ -1,14 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
-import { useSupabase } from '@src/hooks/useSupabase'
+import { supabase } from '@app/utils/supabase'
 
 export default function Auth() {
+  const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isLogin, setIsLogin] = useState(true)
-  const { supabase } = useSupabase()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -25,6 +26,7 @@ export default function Auth() {
         return
       }
     }
+    router.push('/')
   }
   
   return (
