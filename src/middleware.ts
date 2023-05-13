@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import type { Database } from '@app/types/database'
 
-const PROTECT_ROUTES = ['/', '/todo']
+const PROTECT_ROUTES = ['/']
 
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next()
@@ -15,6 +15,13 @@ export async function middleware(req: NextRequest) {
   if (!session && isProtectedRoute) {
     const redirectUrl = req.nextUrl.clone()
     redirectUrl.pathname = '/auth'
+    return NextResponse.redirect(redirectUrl)
+  }
+  const isAuthRoute = req.nextUrl.pathname === '/auth'
+  // セッションがある、かつ、認証ページにアクセスした場合
+  if (session && isAuthRoute) {
+    const redirectUrl = req.nextUrl.clone()
+    redirectUrl.pathname = '/'
     return NextResponse.redirect(redirectUrl)
   }
   return res

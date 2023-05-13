@@ -25,21 +25,9 @@ export const Header = () => {
     <header className="bg-teal-500 text-white px-6 py-4 flex justify-between items-center">
       <p>SB-Auth with AppRouter</p>
       { user.id && (
-        <div className="flex items-center gap-x-8">
-          <nav>
-            <ul className="flex items-center gap-x-4">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/todo">Todo</Link>
-              </li>
-            </ul>
-          </nav>
-          <button type='button' onClick={logout}>
-            Logout
-          </button>
-        </div>
+        <button type='button' onClick={logout}>
+          Logout
+        </button>
       )}
     </header>
   )
