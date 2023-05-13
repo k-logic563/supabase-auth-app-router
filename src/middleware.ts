@@ -17,12 +17,5 @@ export async function middleware(req: NextRequest) {
     redirectUrl.pathname = '/auth'
     return NextResponse.redirect(redirectUrl)
   }
-  const isAuthRoute = req.nextUrl.pathname === '/auth'
-  // セッションがある、かつ、認証ページにアクセスした場合
-  if (session && isAuthRoute) {
-    const redirectUrl = req.nextUrl.clone()
-    redirectUrl.pathname = '/'
-    return NextResponse.redirect(redirectUrl)
-  }
   return res
 }
