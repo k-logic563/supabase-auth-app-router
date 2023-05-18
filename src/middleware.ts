@@ -2,7 +2,7 @@ import { createMiddlewareSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
 
 import type { NextRequest } from 'next/server'
-import type { Database } from '@app/types/database'
+import type { Database } from '@src/types/database'
 
 const PROTECT_ROUTES = ['/']
 
