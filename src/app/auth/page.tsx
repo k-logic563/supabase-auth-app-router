@@ -25,7 +25,7 @@ export default function Auth() {
         return
       }
     }
-    router.push('/')
+    router.push('/dashboard')
   }
   
   return (
