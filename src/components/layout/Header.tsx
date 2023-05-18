@@ -1,12 +1,11 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useStore } from '@nanostores/react'
 
 import { loginUser } from '@src/store'
-import { supabase } from '@app/utils/supabase'
+import { supabase } from '@src/utils/supabase'
 
 export const Header = () => {
   const router = useRouter()

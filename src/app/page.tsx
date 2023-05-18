@@ -1,4 +1,4 @@
-import { Profile } from "./components/Profile"
+import { Profile } from "@src/components/Profile"
 
 export const metadata = {
   title: 'Create Next App',

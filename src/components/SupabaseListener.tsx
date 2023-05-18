@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { updateLoginUser } from '@src/store'
-import { supabase } from '@app/utils/supabase'
+import { supabase } from '@src/utils/supabase'
 
 export const SupabaseListener = () => {
   useEffect(() => {
